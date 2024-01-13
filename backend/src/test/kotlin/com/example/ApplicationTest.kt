@@ -5,8 +5,12 @@ import com.example.database.DatabaseSingleton
 import com.example.plugins.configureRouting
 import io.ktor.client.request.*
 import io.ktor.http.*
+import io.ktor.serialization.kotlinx.json.*
+import io.ktor.server.application.*
+import io.ktor.server.plugins.contentnegotiation.*
 import io.ktor.server.testing.*
 import kotlinx.coroutines.runBlocking
+import module
 import org.junit.*
 import kotlin.test.assertEquals
 
@@ -23,61 +27,74 @@ class ApplicationTest {
         }
     }
 
-    @After
-    fun tearDown() {
-        val testDatabase = DAOFacadeImpl()
-        runBlocking {
-            testDatabase.close()
-        }
-    }
-
     @Test
     fun testGetAllDays() = testApplication {
         application {
             configureRouting()
+            install(ContentNegotiation) {
+                json()
+            }
         }
-        client.get("/days").apply {
-            assertEquals(HttpStatusCode.OK, status)
-        }
+        val response = client.get("/days")
+        assertEquals(HttpStatusCode.OK, response.status)
     }
+
 
     @Test
     fun testGetDayById() = testApplication {
         application {
             configureRouting()
+            install(ContentNegotiation) {
+                json()
+            }
         }
-        client.get("/days/1").apply {
-            assertEquals(HttpStatusCode.OK, status)
-        }
+        val response = client.get("/days/1")
+        assertEquals(HttpStatusCode.OK, response.status)
     }
+
 
     @Test
     fun testCreateNewDay() = testApplication {
         application {
             configureRouting()
+            install(ContentNegotiation) {
+                json()
+            }
         }
-        client.post("/days").apply {
-            assertEquals(HttpStatusCode.OK, status)
-        }
+        val response = client.post("/days")
+        assertEquals(HttpStatusCode.OK, response.status)
     }
 
     @Test
     fun testUpdateDay() = testApplication {
         application {
             configureRouting()
+            install(ContentNegotiation) {
+                json()
+            }
         }
-        client.put("/days/1").apply {
-            assertEquals(HttpStatusCode.OK, status)
-        }
+        val response = client.put("/days/1")
+        assertEquals(HttpStatusCode.OK, response.status)
     }
 
     @Test
     fun testDeleteDay() = testApplication {
         application {
             configureRouting()
+            install(ContentNegotiation) {
+                json()
+            }
         }
-        client.delete("days/1").apply {
-            assertEquals(HttpStatusCode.OK, status)        }
+        val response = client.delete("/days/1")
+        assertEquals(HttpStatusCode.OK, response.status)
+    }
+
+    @After
+    fun tearDown() {
+        val testDatabase = DAOFacadeImpl()
+        runBlocking {
+            testDatabase.close()
+        }
     }
 
 }

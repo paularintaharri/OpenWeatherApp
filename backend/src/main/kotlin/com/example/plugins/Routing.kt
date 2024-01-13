@@ -16,17 +16,14 @@ fun Application.configureRouting() {
 
         // Read all days
         get ("/days"){
-            val daysHtml = database.allDays().joinToString("<br>") { day ->
-                "ID: ${day.id}, Date: ${day.datetime}, Max Temperature: ${day.maxTemperature}, Min Temperature: ${day.minTemperature}"
-            }
-            call.respondText(daysHtml, ContentType.Text.Html, HttpStatusCode.OK)
+            val days = database.allDays()
+            call.respond(days)
         }
 
         // Create new day
         post("/days") {
             val dayData = call.receive<DayData>()
             val day = database.addNewDay(dayData.datetime, dayData.maxTemperature, dayData.minTemperature)
-
             if (day != null) {
                 call.respond(HttpStatusCode.Created, day.id)
             } else {
@@ -39,8 +36,7 @@ fun Application.configureRouting() {
             val id = call.parameters.getOrFail<Int>("id").toInt()
             val day = database.day(id)
             if (day != null) {
-                val dayHtml = "ID: ${day.id}, Date: ${day.datetime}, Max Temperature: ${day.maxTemperature}, Min Temperature: ${day.minTemperature}"
-                call.respondText(dayHtml, ContentType.Text.Html)
+                call.respond(day)
             } else {
                 call.respondText("Creation failed")
             }
@@ -72,3 +68,4 @@ fun Application.configureRouting() {
         }
     }
 }
+
