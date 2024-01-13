@@ -1,0 +1,1 @@
+- To start the application tou need to get API KEY from https://www.visualcrossing.com/weather-api and att it to .env file
