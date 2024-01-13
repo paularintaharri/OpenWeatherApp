@@ -13,19 +13,10 @@ fun main() {
 }
 
 fun Application.module() {
-    DatabaseSingleton.initDatabase()
+    DatabaseSingleton.initDatabase("jdbc:h2:file:./build/db")
     configureRouting()
     runBlocking {
         // Fetch data from https://weather.visualcrossing.com Api
-        val days = fetchWeatherData("Helsinki")
-        // Insert data to sqlite db
-        insertData(days)
-    }
-}
-
-suspend fun insertData(days: List<WeatherApiDayData>) {
-    val database = DAOFacadeImpl()
-    for (day in days) {
-        database.addNewDay(day.datetime, day.maxTemperature, day.minTemperature)
+        fetchWeatherData("Helsinki")
     }
 }

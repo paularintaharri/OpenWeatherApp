@@ -19,7 +19,7 @@ fun Application.configureRouting() {
             val daysHtml = database.allDays().joinToString("<br>") { day ->
                 "ID: ${day.id}, Date: ${day.datetime}, Max Temperature: ${day.maxTemperature}, Min Temperature: ${day.minTemperature}"
             }
-            call.respondText(daysHtml, ContentType.Text.Html)
+            call.respondText(daysHtml, ContentType.Text.Html, HttpStatusCode.OK)
         }
 
         // Create new day
@@ -57,7 +57,7 @@ fun Application.configureRouting() {
             if (database.updateDay(id, datetime, maxTemperature, minTemperature)) {
                 call.respondText("Day updated successfully", ContentType.Text.Html)
             } else {
-                call.respondText("Day not found or update failed", ContentType.Text.Html, status = HttpStatusCode.NotFound)
+                call.respondText("Day not found or update failed", ContentType.Text.Html, HttpStatusCode.NotFound)
             }
         }
 
@@ -65,9 +65,9 @@ fun Application.configureRouting() {
         delete("days/{id}") {
             val id = call.parameters.getOrFail<Int>("id").toInt()
             if (database.deleteDay(id)) {
-                call.respondText("Day deleted successfully", ContentType.Text.Html)
+                call.respondText("Day deleted successfully", ContentType.Text.Html, HttpStatusCode.OK)
             } else {
-                call.respondText("Day not found or delete failed", ContentType.Text.Html, status = HttpStatusCode.NotFound)
+                call.respondText("Day not found or delete failed", ContentType.Text.Html, HttpStatusCode.NotFound)
             }
         }
     }

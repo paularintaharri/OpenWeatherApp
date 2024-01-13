@@ -1,5 +1,6 @@
 package com.example.service
 
+import com.example.database.DAOFacadeImpl
 import com.example.model.WeatherApiDayData
 import com.example.model.WeatherApiResponse
 import io.ktor.client.*
@@ -32,5 +33,14 @@ suspend fun fetchWeatherData(city: String): List<WeatherApiDayData> {
         )
     }
 
+    insertData(days)
+
     return days
+}
+
+suspend fun insertData(days: List<WeatherApiDayData>) {
+    val database = DAOFacadeImpl()
+    for (day in days) {
+        database.addNewDay(day.datetime, day.maxTemperature, day.minTemperature)
+    }
 }

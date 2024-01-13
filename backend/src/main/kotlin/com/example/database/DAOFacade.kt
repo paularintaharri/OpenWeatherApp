@@ -7,4 +7,6 @@ interface DAOFacade {
     suspend fun addNewDay(datetime: String, maxTemperature: Double, minTemperature: Double): DayData?
     suspend fun updateDay(id: Int, datetime: String, maxTemperature: Double, minTemperature: Double): Boolean
     suspend fun deleteDay(id: Int): Boolean
+    suspend fun close()
+
 }

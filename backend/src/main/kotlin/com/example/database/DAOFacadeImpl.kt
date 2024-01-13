@@ -3,12 +3,7 @@ package com.example.database
 import com.example.model.Days
 import com.example.model.DayData
 import com.example.database.DatabaseSingleton.dbQuery
-import org.jetbrains.exposed.sql.ResultRow
-import org.jetbrains.exposed.sql.deleteWhere
-import org.jetbrains.exposed.sql.insert
-import org.jetbrains.exposed.sql.selectAll
-import org.jetbrains.exposed.sql.update
-import org.jetbrains.exposed.sql.select
+import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.transactions.transaction
 import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 
@@ -64,4 +59,12 @@ class DAOFacadeImpl : DAOFacade {
             Days.deleteWhere { Days.id eq id } > 0
         }
     }
+
+    override suspend fun close() {
+        return transaction {
+            Days.deleteAll();
+        }
+    }
+
+
 }
