@@ -21,7 +21,7 @@ Instructions on how to get the backend project up and running can be found in th
 
 The frontend is a simple application implemented with the React framework. It retrieves weather data through the backend API and displays it in a simple table.
 
-Instructions on how to get the frintend project up and running can be found in the frontend's [README.MD](frontend/README.md) file.
+Instructions on how to get the frontend project up and running can be found in the frontend's [README.MD](frontend/README.md) file.
 
 ## Future development
 
