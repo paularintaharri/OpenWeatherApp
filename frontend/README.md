@@ -20,3 +20,9 @@ Have Node installed (NVM is recommended for managing node versions)
 ### Connection to backend
 
 The frontend fetches data from the backend API, so please ensure that the backend application is running for the frontend to successfully retrieve data from there
+
+### Tests
+
+UI tests have been implemented in the React frontend using the React Testing Library to verify the functionality of components.
+
+Run tests: `npm test`

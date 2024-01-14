@@ -7,6 +7,7 @@ This project took approximately 1-2 htp to complete.
 ## Getting Started
 
 Instructions on how to get the project up and running can be found from Backend and Frontend README.MD files.
+
 - [Backend](backend/README.md)
 - [Frontend](frontend/README.md)
 
@@ -25,18 +26,19 @@ Instructions on how to get the frintend project up and running can be found in t
 ## Future development
 
 **Backend**
+
 - Finish all CRUD operations and API endpoints to work (POST and PUT currently not working)
 - Finish all integration tests for the application to work.
 
 **Frontend**
-- Adding some tests to the frontend. 
+
+- Adding more UI tests to the frontend.
 - Sorting the table displaying weather data.
-- Make the pages look more visually appealing and add functionalities such as a detailed view of weather data for a specific day. 
+- Make the pages look more visually appealing and add functionalities such as a detailed view of weather data for a specific day.
 
 **General**
+
 - Deploy the project to run on a cloud platform such as Heroku.
 - Generally add more tests.
 - Fetch and use more weather data from the [Visual Crossing API].
 - Integrated Docker into the project.
-
-
