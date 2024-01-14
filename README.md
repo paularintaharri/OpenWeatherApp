@@ -23,6 +23,9 @@ The frontend is a simple application implemented with the React framework. It re
 
 Instructions on how to get the frontend project up and running can be found in the frontend's [README.MD](frontend/README.md) file.
 
+<img width="553" alt="image" src="https://github.com/paularintaharri/OpenWeatherApp/assets/26680066/cf23b399-8cb0-40ea-b8b3-e78553536d2f">
+
+
 ## Future development
 
 **Backend**
@@ -40,5 +43,5 @@ Instructions on how to get the frontend project up and running can be found in t
 
 - Deploy the project to run on a cloud platform such as Heroku.
 - Generally add more tests.
-- Fetch and use more weather data from the [Visual Crossing API].
+- Fetch and use more weather data from the Visual Crossing API.
 - Integrated Docker into the project.
