@@ -19,4 +19,4 @@ Instructions on how to set up and run the backend.
 
 ### Tests
 
-Integration tests have been implemented for the application to test its CRUD operations. These tests can be executed by running the `com/example/ApplicationTest.kt` file.
+Integration tests have been implemented for the application to test CRUD operations. These tests can be executed by running the `com/example/ApplicationTest.kt` file.
