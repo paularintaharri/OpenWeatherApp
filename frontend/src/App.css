@@ -1,6 +1,8 @@
 /* App.css */
 .app {
   font-family: "Arial", sans-serif;
+  background-color: aliceblue;
+  padding: 2em;
 }
 
 header {
@@ -22,6 +24,8 @@ nav li {
 main {
   max-width: 860px;
   margin: 0px auto 20px;
+  background-color: white;
+  padding: 5em;
 }
 
 aside {

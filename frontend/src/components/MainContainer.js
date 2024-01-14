@@ -41,7 +41,7 @@ const MainContainer = () => {
         variant="contained"
         onClick={toggleTableVisibility}
       >
-        {showTable ? "Näytä sääennuste" : "Piilota sääennuste"}
+        {showTable ? "Piilota sääennuste" : "Näytä sääennuste"}
       </Button>
       {showTable && weatherData && <DataTable weatherData={weatherData} />}
     </main>

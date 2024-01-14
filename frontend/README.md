@@ -1,6 +1,6 @@
 # Frontend
 
-The frontend is a simple application implemented with the React framework. It retrieves weather data through the backend API and displays it in a simple table.
+The frontend is a simple application implemented with the React framework. It retrieves weather data through the backend API and displays it in a simple table. Weather data table was created using [MUI](https://mui.com/) React component library.
 
 ## Getting Started
 
