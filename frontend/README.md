@@ -1,3 +1,34 @@
+# Frontend
+
+Introduction to the frontend of the project.
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Getting Started](#getting-started)
+- [Technologies](#technologies)
+- [Contributing](CONTRIBUTING.md)
+
+## Overview
+
+Brief overview of the frontend, its purpose, and key features.
+
+## Getting Started
+
+Instructions on how to set up and run the frontend.
+
+### Prerequisites
+
+List any software, libraries, or tools required for the frontend.
+
+### Installation
+
+Step-by-step instructions on how to install and configure the frontend.
+
+## Technologies
+
+List of technologies and frameworks used in the frontend.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
