@@ -39,7 +39,6 @@ class ApplicationTest {
         assertEquals(HttpStatusCode.OK, response.status)
     }
 
-
     @Test
     fun testGetDayById() = testApplication {
         application {
@@ -53,6 +52,7 @@ class ApplicationTest {
     }
 
 
+    // TODO Fix and finish the testCreateNewDay test
     @Test
     fun testCreateNewDay() = testApplication {
         application {
@@ -65,6 +65,7 @@ class ApplicationTest {
         assertEquals(HttpStatusCode.OK, response.status)
     }
 
+    // TODO Fix and finish the testUpdateDay test
     @Test
     fun testUpdateDay() = testApplication {
         application {

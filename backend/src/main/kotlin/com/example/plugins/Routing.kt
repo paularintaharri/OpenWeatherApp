@@ -20,6 +20,7 @@ fun Application.configureRouting() {
             call.respond(days)
         }
 
+        // TODO Fix the POST call, currently returns 415 Unsupported Media Type error
         // Create new day
         post("/days") {
             val dayData = call.receive<DayData>()
@@ -42,6 +43,7 @@ fun Application.configureRouting() {
             }
         }
 
+        // TODO Fix the PUT call
         // Update day
         put("days/{id}") {
             val id = call.parameters.getOrFail<Int>("id").toInt()

@@ -7,7 +7,6 @@ import io.ktor.client.*
 import io.ktor.client.request.*
 import io.ktor.http.*
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.decodeFromString
 import io.github.cdimascio.dotenv.*
 import io.ktor.client.engine.cio.*
 import io.ktor.client.statement.*
@@ -24,7 +23,6 @@ suspend fun fetchWeatherData(city: String): List<WeatherApiDayData> {
         }
 
     val weatherResponse = Json { ignoreUnknownKeys = true }.decodeFromString<WeatherApiResponse>(response.bodyAsText())
-
     val days = weatherResponse.days.map {
         WeatherApiDayData(
             datetime = it.datetime,
