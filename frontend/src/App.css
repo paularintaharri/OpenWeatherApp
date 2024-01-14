@@ -1,0 +1,41 @@
+/* App.css */
+.app {
+  font-family: "Arial", sans-serif;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+main {
+  max-width: 860px;
+  margin: 0px auto 20px;
+}
+
+aside {
+  background-color: #f0f0f0;
+  padding: 10px;
+  width: 20%;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
