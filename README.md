@@ -15,16 +15,15 @@ Instructions on how to get the project up and running can be found from Backend 
 
 The backend is implemented in Kotlin using the Ktor framework. The backend fetches data from the Visual Crossing weather API and stores it in an SQLite database, implemented using the Exposed library. The application features an API interface that serves data to the frontend, including all the basic CRUD operations.
 
-Instructions on how to get the backend project up and running can be found in the backend's [README.MD](backend/README.md) file.
-
 ## Frontend
 
 The frontend is a simple application implemented with the React framework. It retrieves weather data through the backend API and displays it in a simple table.
 
-Instructions on how to get the frontend project up and running can be found in the frontend's [README.MD](frontend/README.md) file.
-
 <img width="553" alt="image" src="https://github.com/paularintaharri/OpenWeatherApp/assets/26680066/cf23b399-8cb0-40ea-b8b3-e78553536d2f">
 
+## API Documentation
+
+API documentation can be found from here: [API documentation](backend/README.md#api-documentation)
 
 ## Future development
 
